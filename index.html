@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PDQ - Facilitador PIX</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 :root {
     --primary: #d4a121;
     --primary-dark: #b38a1c;
+    --primary-light: #f1c94e;
     --bg-dark: #0a150a;
     --bg-card: #0f1f0f;
     --bg-row: #122012;
@@ -16,8 +19,9 @@
     --danger: #FF4757;
     --warning: #FF9800;
     --info: #2196F3;
-    --pix-color: #32CD32;
-    --pix-dark: #28a428;
+    --pix-color: #d4a121;
+    --pix-dark: #b38a1c;
+    --pix-light: #f1c94e;
     --text: #ffffff;
     --text-muted: #aaaaaa;
     --border: #1a2a1a;
@@ -31,7 +35,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'ANTON', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--bg-dark);
     color: var(--text);
     min-height: 100vh;
@@ -58,10 +62,12 @@ body {
 }
 
 .header h1 {
+    font-family: 'Anton', sans-serif;
     font-size: 1.8rem;
     color: var(--pix-color);
     margin-bottom: 4px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .header .subtitle {
@@ -92,11 +98,13 @@ body {
     color: #000;
     border: none;
     border-radius: 8px;
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 .cadastro-btn:hover {
@@ -114,13 +122,15 @@ body {
 }
 
 .instructions-title {
+    font-family: 'Anton', sans-serif;
     color: var(--pix-color);
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
 .instructions-grid {
@@ -145,7 +155,8 @@ body {
     border-radius: 50%;
     text-align: center;
     line-height: 30px;
-    font-weight: 700;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     margin-bottom: 10px;
     font-size: 0.9rem;
 }
@@ -188,7 +199,7 @@ body {
 .search-box input:focus {
     outline: none;
     border-color: var(--pix-color);
-    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.1);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
 }
 
 .search-icon {
@@ -223,7 +234,7 @@ body {
 
 .filter-btn:hover {
     border-color: var(--pix-color);
-    background: rgba(50, 205, 50, 0.05);
+    background: rgba(212, 161, 33, 0.05);
 }
 
 .filter-btn.active {
@@ -255,10 +266,12 @@ body {
 }
 
 .stat-value {
+    font-family: 'Anton', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--pix-color);
     margin-bottom: 4px;
+    letter-spacing: 0.5px;
 }
 
 .stat-label {
@@ -280,11 +293,13 @@ body {
     grid-template-columns: 60px 1fr 2fr 100px;
     gap: 15px;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(50, 205, 50, 0.1), rgba(50, 205, 50, 0.05));
+    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05));
     border-bottom: 2px solid var(--pix-color);
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     font-size: 0.9rem;
     color: var(--pix-color);
+    letter-spacing: 0.5px;
 }
 
 .pix-list {
@@ -311,7 +326,7 @@ body {
 }
 
 .pix-player-card:hover {
-    background: rgba(50, 205, 50, 0.05);
+    background: rgba(212, 161, 33, 0.05);
 }
 
 .pix-player-avatar {
@@ -329,15 +344,17 @@ body {
 }
 
 .pix-player-name {
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     margin-bottom: 4px;
+    letter-spacing: 0.5px;
 }
 
 .pix-player-type {
     font-size: 0.75rem;
     color: var(--text-muted);
-    background: rgba(50, 205, 50, 0.1);
+    background: rgba(212, 161, 33, 0.1);
     padding: 2px 6px;
     border-radius: 3px;
     display: inline-block;
@@ -355,10 +372,10 @@ body {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     color: var(--pix-color);
-    background: rgba(50, 205, 50, 0.1);
+    background: rgba(212, 161, 33, 0.1);
     padding: 10px 12px;
     border-radius: 6px;
-    border: 1px solid rgba(50, 205, 50, 0.3);
+    border: 1px solid rgba(212, 161, 33, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -368,7 +385,7 @@ body {
 }
 
 .pix-key:hover {
-    background: rgba(50, 205, 50, 0.15);
+    background: rgba(212, 161, 33, 0.15);
     border-color: var(--pix-color);
 }
 
@@ -404,13 +421,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Anton', sans-serif;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .pix-copy-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+    box-shadow: 0 4px 12px rgba(212, 161, 33, 0.3);
 }
 
 .pix-copy-btn.copied {
@@ -462,12 +480,14 @@ body {
 }
 
 .form-group label {
+    font-family: 'Anton', sans-serif;
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 6px;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
@@ -494,7 +514,7 @@ body {
 
 .form-group.pix input:focus {
     border-color: var(--pix-color);
-    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.1);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
 }
 
 .form-actions {
@@ -509,7 +529,8 @@ body {
     padding: 12px 24px;
     border: none;
     border-radius: 6px;
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -517,6 +538,7 @@ body {
     gap: 8px;
     min-width: 140px;
     justify-content: center;
+    letter-spacing: 0.5px;
 }
 
 .save-btn {
@@ -552,9 +574,11 @@ body {
     padding: 15px;
     background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05));
     border-bottom: 2px solid var(--primary);
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     font-size: 0.9rem;
     color: var(--primary);
+    letter-spacing: 0.5px;
 }
 
 .jogadores-items {
@@ -599,8 +623,10 @@ body {
 }
 
 .jogador-nome {
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 .jogador-status {
@@ -620,10 +646,10 @@ body {
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     color: var(--pix-color);
-    background: rgba(50, 205, 50, 0.1);
+    background: rgba(212, 161, 33, 0.1);
     padding: 8px 10px;
     border-radius: 4px;
-    border: 1px solid rgba(50, 205, 50, 0.2);
+    border: 1px solid rgba(212, 161, 33, 0.2);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -722,12 +748,14 @@ body {
 }
 
 .modal-title {
+    font-family: 'Anton', sans-serif;
     color: var(--primary);
     font-size: 1.2rem;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
+    letter-spacing: 0.5px;
 }
 
 .modal-text {
@@ -746,9 +774,11 @@ body {
     padding: 8px 20px;
     border: none;
     border-radius: 4px;
-    font-weight: 600;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.2s ease;
+    letter-spacing: 0.5px;
 }
 
 .modal-btn.cancel {
@@ -940,15 +970,15 @@ body {
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">2</div>
-                    <div class="step-text">Clique no botão verde de cópia.</div>
+                    <div class="step-text">Clique no botão amarelo de cópia</div>
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">3</div>
-                    <div class="step-text">Abra o App do Pic Pay</div>
+                    <div class="step-text">Abra o App do Pic Pay ou seu banco</div>
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">4</div>
-                    <div class="step-text">Pronto! Dê uma Mamada no Gaspar! haiuhaiuhaiuhiauh</div>
+                    <div class="step-text">Cole a chave PIX e confirme o pagamento</div>
                 </div>
             </div>
         </div>
@@ -1027,7 +1057,7 @@ body {
 
         <!-- Formulário de Cadastro -->
         <div style="background: var(--bg-card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border);">
-            <div style="font-size: 1.2rem; font-weight: 600; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.2rem; font-weight: 400; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;">
                 <span>📝</span>
                 <span>CADASTRAR NOVO JOGADOR</span>
             </div>
@@ -1829,4 +1859,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
