@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDQ - Cadastro de Jogadores e PIX</title>
+<title>PDQ - Facilitador PIX</title>
 <style>
 :root {
     --primary: #d4a121;
@@ -17,6 +17,7 @@
     --warning: #FF9800;
     --info: #2196F3;
     --pix-color: #32CD32;
+    --pix-dark: #28a428;
     --text: #ffffff;
     --text-muted: #aaaaaa;
     --border: #1a2a1a;
@@ -58,7 +59,7 @@ body {
 
 .header h1 {
     font-size: 1.8rem;
-    color: var(--primary);
+    color: var(--pix-color);
     margin-bottom: 4px;
     letter-spacing: 0.5px;
 }
@@ -76,20 +77,137 @@ body {
     padding: 0 12px;
 }
 
-/* Controle de Visualização */
-.view-controls {
+/* Botão de Acesso ao Cadastro */
+.cadastro-access {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cadastro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.cadastro-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Instruções PIX */
+.pix-instructions {
     background: var(--bg-card);
     border-radius: 8px;
-    padding: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--pix-color);
+}
+
+.instructions-title {
+    color: var(--pix-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.instruction-step {
+    background: var(--bg-row);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: var(--pix-color);
+    color: #000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+/* Filtros e Busca */
+.filters-container {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 15px;
     margin-bottom: 15px;
     border: 1px solid var(--border);
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.view-btn {
-    padding: 10px 20px;
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    background: var(--bg-row);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--pix-color);
+    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pix-color);
+    font-size: 1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 18px;
     background: var(--bg-row);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -103,34 +221,206 @@ body {
     gap: 6px;
 }
 
-.view-btn:hover {
-    border-color: var(--primary);
-    background: rgba(212, 161, 33, 0.05);
-}
-
-.view-btn.active {
-    background: var(--primary);
-    color: #000;
-    border-color: var(--primary);
-}
-
-.view-btn.pix {
-    color: var(--pix-color);
+.filter-btn:hover {
     border-color: var(--pix-color);
-}
-
-.view-btn.pix:hover {
     background: rgba(50, 205, 50, 0.05);
 }
 
-.view-btn.pix.active {
+.filter-btn.active {
     background: var(--pix-color);
     color: #000;
     border-color: var(--pix-color);
+    font-weight: 600;
 }
 
-/* Seção de Cadastro */
+/* Estatísticas Rápidas */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.stat-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pix-color);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Lista de Jogadores para PIX */
+.pix-players-container {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.pix-header {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr 100px;
+    gap: 15px;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(50, 205, 50, 0.1), rgba(50, 205, 50, 0.05));
+    border-bottom: 2px solid var(--pix-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--pix-color);
+}
+
+.pix-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.pix-player-card {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr 100px;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-light);
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.pix-player-card:nth-child(odd) {
+    background: var(--bg-row);
+}
+
+.pix-player-card:nth-child(even) {
+    background: var(--bg-row-alt);
+}
+
+.pix-player-card:hover {
+    background: rgba(50, 205, 50, 0.05);
+}
+
+.pix-player-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--pix-color);
+    background: var(--bg-dark);
+}
+
+.pix-player-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.pix-player-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.pix-player-type {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: rgba(50, 205, 50, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.pix-key-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pix-key {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--pix-color);
+    background: rgba(50, 205, 50, 0.1);
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(50, 205, 50, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.pix-key:hover {
+    background: rgba(50, 205, 50, 0.15);
+    border-color: var(--pix-color);
+}
+
+.pix-key.copied::after {
+    content: "✓ Copiado!";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--success);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    animation: fadeOut 2s forwards;
+}
+
+.pix-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.pix-copy-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--pix-color), var(--pix-dark));
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pix-copy-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+}
+
+.pix-copy-btn.copied {
+    background: linear-gradient(135deg, var(--success), #45a049);
+    animation: pulse 0.5s;
+}
+
+/* Seção de Cadastro (Oculta inicialmente) */
 .cadastro-section {
+    display: none;
     background: var(--bg-card);
     border-radius: 8px;
     padding: 20px;
@@ -138,52 +428,64 @@ body {
     border: 1px solid var(--border);
 }
 
-.section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 20px;
-    display: flex;
+.back-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    background: var(--bg-row);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
 }
 
-/* Formulário de Cadastro */
+.back-btn:hover {
+    border-color: var(--primary);
+    background: rgba(212, 161, 33, 0.05);
+}
+
 .cadastro-form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .form-group label {
     color: var(--primary);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
 }
 
-.form-group input {
-    padding: 10px;
+.form-group input,
+.form-group select {
+    padding: 12px;
     background: var(--bg-dark);
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: all 0.2s ease;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
 }
 
 .form-group.pix input {
@@ -192,6 +494,7 @@ body {
 
 .form-group.pix input:focus {
     border-color: var(--pix-color);
+    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.1);
 }
 
 .form-actions {
@@ -199,10 +502,11 @@ body {
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .form-btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 6px;
     font-weight: 600;
@@ -210,8 +514,8 @@ body {
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 6px;
-    min-width: 120px;
+    gap: 8px;
+    min-width: 140px;
     justify-content: center;
 }
 
@@ -233,40 +537,36 @@ body {
     background: #ff3742;
 }
 
-/* Lista de Jogadores */
-.lista-jogadores {
+/* Lista de Jogadores no Cadastro */
+.jogadores-list {
     background: var(--bg-card);
     border-radius: 8px;
     border: 1px solid var(--border);
     overflow: hidden;
 }
 
-.lista-header {
+.jogadores-header {
     display: grid;
-    grid-template-columns: 50px 1fr 1.5fr 100px;
+    grid-template-columns: 50px 1fr 1.5fr 120px;
     gap: 15px;
-    padding: 12px 15px;
-    background: var(--bg-row);
-    border-bottom: 1px solid var(--border);
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05));
+    border-bottom: 2px solid var(--primary);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--primary);
 }
 
-.lista-header.pix {
-    color: var(--pix-color);
-}
-
-.lista-items {
+.jogadores-items {
     max-height: 500px;
     overflow-y: auto;
 }
 
 .jogador-item {
     display: grid;
-    grid-template-columns: 50px 1fr 1.5fr 100px;
+    grid-template-columns: 50px 1fr 1.5fr 120px;
     gap: 15px;
-    padding: 12px 15px;
+    padding: 15px;
     border-bottom: 1px solid var(--border-light);
     align-items: center;
     transition: all 0.2s ease;
@@ -315,7 +615,7 @@ body {
     gap: 10px;
 }
 
-.pix-key {
+.pix-key-small {
     flex: 1;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
@@ -327,13 +627,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.pix-key:hover {
-    background: rgba(50, 205, 50, 0.15);
-    border-color: var(--pix-color);
 }
 
 .pix-type {
@@ -345,12 +638,12 @@ body {
     margin-top: 4px;
 }
 
-.pix-actions {
+.jogador-actions {
     display: flex;
-    gap: 5px;
+    gap: 8px;
 }
 
-.pix-action-btn {
+.action-btn {
     width: 36px;
     height: 36px;
     border: none;
@@ -365,30 +658,21 @@ body {
     font-size: 0.9rem;
 }
 
-.pix-action-btn.copy {
-    color: var(--pix-color);
-    border: 1px solid var(--pix-color);
-}
-
-.pix-action-btn.copy:hover {
-    background: rgba(50, 205, 50, 0.1);
-}
-
-.pix-action-btn.edit {
+.action-btn.edit {
     color: var(--primary);
     border: 1px solid var(--primary);
 }
 
-.pix-action-btn.edit:hover {
+.action-btn.edit:hover {
     background: rgba(212, 161, 33, 0.1);
 }
 
-.pix-action-btn.delete {
+.action-btn.delete {
     color: var(--danger);
     border: 1px solid var(--danger);
 }
 
-.pix-action-btn.delete:hover {
+.action-btn.delete:hover {
     background: rgba(255, 71, 87, 0.1);
 }
 
@@ -481,108 +765,37 @@ body {
     background: #ff3742;
 }
 
-/* Seção PIX */
-.pix-section {
-    display: none;
-}
-
-.pix-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.pix-header h2 {
-    color: var(--pix-color);
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.pix-instructions {
-    background: var(--bg-row);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    margin-bottom: 20px;
-}
-
-.instructions-title {
-    color: var(--pix-color);
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.instructions-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.instructions-list li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.instructions-list li:before {
-    content: "→";
-    color: var(--pix-color);
-}
-
-/* QR Code Info */
-.qr-info {
-    background: var(--bg-row);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px dashed var(--border);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.qr-title {
-    color: var(--pix-color);
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.qr-text {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-}
-
-.qr-container {
-    max-width: 200px;
-    margin: 0 auto 15px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-.qr-container img {
-    width: 100%;
-    height: auto;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
-    .cadastro-form {
-        grid-template-columns: 1fr;
+    .pix-header,
+    .pix-player-card {
+        grid-template-columns: 50px 1fr 80px;
+        grid-template-areas: 
+            "avatar info actions"
+            "pix pix pix";
+        gap: 10px;
     }
     
-    .lista-header {
-        grid-template-columns: 40px 1fr 80px;
-        display: none;
+    .pix-player-avatar {
+        grid-area: avatar;
     }
     
+    .pix-player-info {
+        grid-area: info;
+    }
+    
+    .pix-key-container {
+        grid-area: pix;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-light);
+    }
+    
+    .pix-actions {
+        grid-area: actions;
+    }
+    
+    .jogadores-header,
     .jogador-item {
         grid-template-columns: 40px 1fr 80px;
         grid-template-areas: 
@@ -606,16 +819,16 @@ body {
         border-top: 1px solid var(--border-light);
     }
     
-    .pix-actions {
+    .jogador-actions {
         grid-area: actions;
     }
     
-    .view-controls {
+    .filters-container {
         flex-direction: column;
     }
     
-    .view-btn {
-        justify-content: center;
+    .search-box {
+        min-width: 100%;
     }
 }
 
@@ -624,14 +837,14 @@ body {
         font-size: 1.4rem;
     }
     
-    .jogador-item {
-        grid-template-columns: 40px 1fr 60px;
+    .instruction-step {
+        padding: 12px;
     }
     
-    .pix-action-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
+    .pix-copy-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -645,12 +858,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary);
+    background: var(--pix-color);
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-dark);
+    background: var(--pix-dark);
 }
 
 /* Animações */
@@ -667,45 +880,27 @@ body {
 
 @keyframes pulse {
     0%, 100% {
-        opacity: 1;
+        transform: scale(1);
     }
     50% {
-        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
 .pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 200px;
-    background-color: var(--bg-card);
-    color: var(--text);
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    border: 1px solid var(--border);
-    font-size: 0.8rem;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+    animation: pulse 0.5s ease;
 }
 </style>
 </head>
@@ -718,27 +913,121 @@ body {
 </div>
 
 <div class="container">
-    <div class="header">
-        <h1>👥 CADASTRO DE JOGADORES & PIX</h1>
-        <div class="subtitle">Gerencie os dados dos jogadores e suas chaves PIX</div>
+    <!-- PÁGINA PRINCIPAL: FACILITADOR PIX -->
+    <div id="pixPage">
+        <div class="header">
+            <h1>💰 FACILITADOR DE PAGAMENTOS PIX</h1>
+            <div class="subtitle">Selecione um jogador para copiar sua chave PIX</div>
+        </div>
+
+        <div class="cadastro-access">
+            <button class="cadastro-btn" id="btnAcessarCadastro">
+                <span>👤</span>
+                <span>Acessar Cadastro de Jogadores</span>
+            </button>
+        </div>
+
+        <!-- Instruções -->
+        <div class="pix-instructions">
+            <div class="instructions-title">
+                <span>📋</span>
+                <span>COMO UTILIZAR O FACILITADOR PIX:</span>
+            </div>
+            <div class="instructions-grid">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Selecione o jogador que irá receber o pagamento</div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Clique no botão verde de cópia ou na própria chave PIX</div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Abra seu aplicativo bancário ou gerencidor de PIX</div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Cole a chave PIX no campo correspondente e confirme</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value" id="totalJogadores">0</div>
+                <div class="stat-label">Jogadores Cadastrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-value" id="comPix">0</div>
+                <div class="stat-label">Com Chave PIX</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-value" id="semPix">0</div>
+                <div class="stat-label">Sem Chave PIX</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value" id="ultimaAtualizacao">0</div>
+                <div class="stat-label">Dias Atualizado</div>
+            </div>
+        </div>
+
+        <!-- Filtros e Busca -->
+        <div class="filters-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar jogador por nome...">
+                <div class="search-icon">🔍</div>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" id="filterTodos">
+                    <span>👥</span>
+                    <span>Todos</span>
+                </button>
+                <button class="filter-btn" id="filterComPix">
+                    <span>💰</span>
+                    <span>Com PIX</span>
+                </button>
+                <button class="filter-btn" id="filterSemPix">
+                    <span>⭕</span>
+                    <span>Sem PIX</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Lista de Jogadores para PIX -->
+        <div class="pix-players-container">
+            <div class="pix-header">
+                <div>Foto</div>
+                <div>Jogador</div>
+                <div>Chave PIX</div>
+                <div>Copiar</div>
+            </div>
+            <div class="pix-list" id="pixList">
+                <!-- Jogadores serão carregados aqui -->
+            </div>
+        </div>
     </div>
 
-    <!-- Controle de Visualização -->
-    <div class="view-controls">
-        <button class="view-btn active" id="btnViewCadastro">
-            <span>👤</span>
-            <span>Cadastro de Jogadores</span>
+    <!-- PÁGINA SECUNDÁRIA: CADASTRO DE JOGADORES -->
+    <div id="cadastroPage" class="cadastro-section">
+        <button class="back-btn" id="btnVoltarPix">
+            <span>←</span>
+            <span>Voltar para Facilitador PIX</span>
         </button>
-        <button class="view-btn pix" id="btnViewPix">
-            <span>💰</span>
-            <span>Facilitador PIX</span>
-        </button>
-    </div>
 
-    <!-- Seção de Cadastro -->
-    <div id="cadastroSection">
-        <div class="cadastro-section">
-            <div class="section-title">
+        <div class="header">
+            <h1 style="color: var(--primary);">👤 CADASTRO DE JOGADORES</h1>
+            <div class="subtitle">Gerencie os dados dos jogadores e suas chaves PIX</div>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div style="background: var(--bg-card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border);">
+            <div style="font-size: 1.2rem; font-weight: 600; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
                 <span>📝</span>
                 <span>CADASTRAR NOVO JOGADOR</span>
             </div>
@@ -773,7 +1062,7 @@ body {
                         <span>🏷️</span>
                         <span>Tipo da Chave</span>
                     </label>
-                    <select id="tipoPix" style="padding: 10px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 6px; color: var(--text);">
+                    <select id="tipoPix">
                         <option value="CPF">CPF/CNPJ</option>
                         <option value="EMAIL">E-mail</option>
                         <option value="TELEFONE">Telefone</option>
@@ -795,63 +1084,15 @@ body {
         </div>
 
         <!-- Lista de Jogadores Cadastrados -->
-        <div class="lista-jogadores">
-            <div class="lista-header">
+        <div class="jogadores-list">
+            <div class="jogadores-header">
                 <div>Foto</div>
                 <div>Jogador</div>
                 <div>Chave PIX</div>
                 <div>Ações</div>
             </div>
-            <div class="lista-items" id="listaJogadores">
+            <div class="jogadores-items" id="listaJogadores">
                 <!-- Jogadores serão carregados aqui -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Seção PIX -->
-    <div id="pixSection" class="pix-section">
-        <div class="pix-header">
-            <h2>
-                <span>💰</span>
-                <span>FACILITADOR DE PAGAMENTOS PIX</span>
-            </h2>
-            <div style="color: var(--text-muted); font-size: 0.9rem;">
-                Selecione um jogador para copiar sua chave PIX
-            </div>
-        </div>
-
-        <div class="pix-instructions">
-            <div class="instructions-title">
-                <span>📋</span>
-                <span>COMO UTILIZAR:</span>
-            </div>
-            <ul class="instructions-list">
-                <li>Selecione o jogador que irá receber o PIX</li>
-                <li>Clique no botão de cópia ao lado da chave PIX</li>
-                <li>Abra seu aplicativo bancário</li>
-                <li>Cole a chave PIX no campo correspondente</li>
-                <li>Confirme os dados e realize o pagamento</li>
-            </ul>
-        </div>
-
-        <!-- Lista de Jogadores para PIX -->
-        <div class="lista-jogadores">
-            <div class="lista-header pix">
-                <div>Foto</div>
-                <div>Jogador</div>
-                <div>Chave PIX</div>
-                <div>Copiar</div>
-            </div>
-            <div class="lista-items" id="listaPix">
-                <!-- Jogadores para PIX serão carregados aqui -->
-            </div>
-        </div>
-
-        <div class="qr-info">
-            <div class="qr-title">💡 DICA IMPORTANTE</div>
-            <div class="qr-text">
-                Para pagamentos mais rápidos, peça ao jogador para gerar um QR Code PIX em seu aplicativo bancário.
-                Basta escanear com a câmera do seu celular para preencher automaticamente todos os dados.
             </div>
         </div>
     </div>
@@ -892,7 +1133,7 @@ body {
             </div>
             <div class="form-group" style="margin-bottom: 20px;">
                 <label for="editTipoPix">Tipo da Chave</label>
-                <select id="editTipoPix" style="padding: 10px; width: 100%; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 6px; color: var(--text);">
+                <select id="editTipoPix">
                     <option value="CPF">CPF/CNPJ</option>
                     <option value="EMAIL">E-mail</option>
                     <option value="TELEFONE">Telefone</option>
@@ -922,6 +1163,8 @@ const FIREBASE_CONFIG = {
 let jogadores = [];
 let jogadorParaExcluir = null;
 let jogadorParaEditar = null;
+let filtroAtual = 'todos';
+let buscaAtual = '';
 
 class FirebaseDB {
     constructor(config) {
@@ -1005,10 +1248,16 @@ const statusIndicator = document.getElementById('statusIndicator');
 // Inicialização
 async function init() {
     try {
-        statusIndicator.textContent = '🔄 Carregando jogadores...';
+        statusIndicator.textContent = '🔄 Carregando dados...';
         
         // Carregar jogadores do Firebase
         await carregarJogadores();
+        
+        // Configurar estatísticas
+        atualizarEstatisticas();
+        
+        // Renderizar lista PIX inicial
+        renderizarListaPIX();
         
         statusIndicator.textContent = '✅ Conectado';
         statusIndicator.classList.add('connected');
@@ -1028,8 +1277,6 @@ async function carregarJogadores() {
                 ...dados[key],
                 id: key
             }));
-            renderizarListaCadastro();
-            renderizarListaPix();
         } else {
             jogadores = [];
         }
@@ -1039,16 +1286,133 @@ async function carregarJogadores() {
     }
 }
 
-// Renderizar lista na seção de cadastro
+// Atualizar estatísticas
+function atualizarEstatisticas() {
+    const total = jogadores.length;
+    const comPix = jogadores.filter(j => j.chavePix).length;
+    const semPix = total - comPix;
+    
+    // Encontrar data da última atualização
+    let ultimaAtualizacao = 0;
+    jogadores.forEach(jogador => {
+        if (jogador.dataAtualizacao) {
+            const data = new Date(jogador.dataAtualizacao);
+            const dias = Math.floor((Date.now() - data.getTime()) / (1000 * 60 * 60 * 24));
+            if (dias < ultimaAtualizacao || ultimaAtualizacao === 0) {
+                ultimaAtualizacao = dias;
+            }
+        }
+    });
+    
+    document.getElementById('totalJogadores').textContent = total;
+    document.getElementById('comPix').textContent = comPix;
+    document.getElementById('semPix').textContent = semPix;
+    document.getElementById('ultimaAtualizacao').textContent = ultimaAtualizacao || '-';
+}
+
+// Renderizar lista PIX
+function renderizarListaPIX() {
+    const lista = document.getElementById('pixList');
+    
+    // Filtrar jogadores
+    let jogadoresFiltrados = [...jogadores];
+    
+    // Aplicar busca
+    if (buscaAtual) {
+        const termo = buscaAtual.toLowerCase();
+        jogadoresFiltrados = jogadoresFiltrados.filter(j => 
+            j.nome.toLowerCase().includes(termo)
+        );
+    }
+    
+    // Aplicar filtro
+    if (filtroAtual === 'comPix') {
+        jogadoresFiltrados = jogadoresFiltrados.filter(j => j.chavePix);
+    } else if (filtroAtual === 'semPix') {
+        jogadoresFiltrados = jogadoresFiltrados.filter(j => !j.chavePix);
+    }
+    
+    // Ordenar por nome
+    jogadoresFiltrados.sort((a, b) => a.nome.localeCompare(b.nome));
+    
+    if (jogadoresFiltrados.length === 0) {
+        const mensagem = buscaAtual ? 
+            `Nenhum jogador encontrado para "${buscaAtual}"` :
+            'Nenhum jogador cadastrado';
+        
+        lista.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🔍</div>
+                <div style="font-size: 1.1rem; margin-bottom: 10px;">${mensagem}</div>
+                <div style="font-size: 0.9rem;">
+                    ${buscaAtual ? 'Tente buscar por outro nome' : 'Cadastre jogadores na aba de cadastro'}
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    
+    jogadoresFiltrados.forEach(jogador => {
+        const tipoPixText = {
+            'CPF': 'CPF/CNPJ',
+            'EMAIL': 'E-mail',
+            'TELEFONE': 'Telefone',
+            'ALEATORIA': 'Chave Aleatória'
+        }[jogador.tipoPix] || 'Chave PIX';
+        
+        const temPix = !!jogador.chavePix;
+        
+        html += `
+            <div class="pix-player-card">
+                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
+                     class="pix-player-avatar"
+                     alt="${jogador.nome}"
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
+                <div class="pix-player-info">
+                    <div class="pix-player-name">${jogador.nome}</div>
+                    <div class="pix-player-type">${temPix ? tipoPixText : 'Sem PIX'}</div>
+                </div>
+                <div class="pix-key-container">
+                    ${temPix ? `
+                        <div class="pix-key" onclick="copiarChavePIX('${jogador.id}', this)">
+                            ${jogador.chavePix}
+                        </div>
+                    ` : `
+                        <div style="flex: 1; color: var(--text-muted); font-style: italic; padding: 10px 12px;">
+                            Sem chave PIX cadastrada
+                        </div>
+                    `}
+                </div>
+                <div class="pix-actions">
+                    ${temPix ? `
+                        <button class="pix-copy-btn" onclick="copiarChavePIX('${jogador.id}', this)" title="Copiar chave PIX">
+                            📋
+                        </button>
+                    ` : `
+                        <button class="pix-copy-btn" style="background: var(--text-muted); cursor: not-allowed;" disabled title="Sem chave PIX">
+                            ⭕
+                        </button>
+                    `}
+                </div>
+            </div>
+        `;
+    });
+    
+    lista.innerHTML = html;
+}
+
+// Renderizar lista de cadastro
 function renderizarListaCadastro() {
     const lista = document.getElementById('listaJogadores');
     
     if (jogadores.length === 0) {
         lista.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: var(--text-muted);">
-                <div style="font-size: 3rem; margin-bottom: 10px;">👤</div>
-                <div>Nenhum jogador cadastrado</div>
-                <div style="font-size: 0.8rem; margin-top: 5px;">Comece cadastrando um jogador acima</div>
+            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">👤</div>
+                <div style="font-size: 1.1rem; margin-bottom: 10px;">Nenhum jogador cadastrado</div>
+                <div style="font-size: 0.9rem;">Comece cadastrando um jogador usando o formulário acima</div>
             </div>
         `;
         return;
@@ -1069,6 +1433,10 @@ function renderizarListaCadastro() {
             'ALEATORIA': 'Chave Aleatória'
         }[jogador.tipoPix] || 'Chave PIX';
         
+        const dataCriacao = jogador.dataCriacao ? 
+            new Date(jogador.dataCriacao).toLocaleDateString('pt-BR') : 
+            'Data desconhecida';
+        
         html += `
             <div class="jogador-item">
                 <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
@@ -1077,19 +1445,25 @@ function renderizarListaCadastro() {
                      onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
                 <div class="jogador-info">
                     <div class="jogador-nome">${jogador.nome}</div>
-                    <div class="jogador-status">Cadastrado em: ${new Date(jogador.dataCriacao || Date.now()).toLocaleDateString('pt-BR')}</div>
+                    <div class="jogador-status">Cadastrado em: ${dataCriacao}</div>
                 </div>
                 <div class="pix-info">
-                    <div class="pix-key" title="Clique para copiar" onclick="copiarChavePIX('${jogador.id}')">
-                        ${jogador.chavePix || 'Sem chave PIX'}
-                    </div>
-                    <div class="pix-type">${tipoPixText}</div>
+                    ${jogador.chavePix ? `
+                        <div class="pix-key-small">
+                            ${jogador.chavePix}
+                        </div>
+                        <div class="pix-type">${tipoPixText}</div>
+                    ` : `
+                        <div style="color: var(--text-muted); font-style: italic; font-size: 0.9rem;">
+                            Sem chave PIX
+                        </div>
+                    `}
                 </div>
-                <div class="pix-actions">
-                    <button class="pix-action-btn edit" onclick="editarJogador('${jogador.id}')" title="Editar">
+                <div class="jogador-actions">
+                    <button class="action-btn edit" onclick="editarJogador('${jogador.id}')" title="Editar">
                         ✏️
                     </button>
-                    <button class="pix-action-btn delete" onclick="solicitarExclusao('${jogador.id}')" title="Excluir">
+                    <button class="action-btn delete" onclick="solicitarExclusao('${jogador.id}')" title="Excluir">
                         🗑️
                     </button>
                 </div>
@@ -1100,75 +1474,46 @@ function renderizarListaCadastro() {
     lista.innerHTML = html;
 }
 
-// Renderizar lista na seção PIX
-function renderizarListaPix() {
-    const lista = document.getElementById('listaPix');
-    
-    if (jogadores.length === 0) {
-        lista.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: var(--text-muted);">
-                <div style="font-size: 3rem; margin-bottom: 10px;">💰</div>
-                <div>Nenhum jogador com chave PIX cadastrada</div>
-                <div style="font-size: 0.8rem; margin-top: 5px;">Cadastre jogadores na aba "Cadastro de Jogadores"</div>
-            </div>
-        `;
+// Copiar chave PIX
+async function copiarChavePIX(jogadorId, elemento) {
+    const jogador = jogadores.find(j => j.id === jogadorId);
+    if (!jogador || !jogador.chavePix) {
+        mostrarFeedback('❌ Jogador não encontrado ou sem chave PIX');
         return;
     }
     
-    // Filtrar jogadores que têm chave PIX
-    const jogadoresComPix = jogadores.filter(j => j.chavePix);
-    
-    if (jogadoresComPix.length === 0) {
-        lista.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: var(--text-muted);">
-                <div style="font-size: 3rem; margin-bottom: 10px;">🔍</div>
-                <div>Nenhum jogador com chave PIX encontrado</div>
-                <div style="font-size: 0.8rem; margin-top: 5px;">Adicione chaves PIX aos jogadores cadastrados</div>
-            </div>
-        `;
-        return;
-    }
-    
-    // Ordenar jogadores por nome
-    const jogadoresOrdenados = [...jogadoresComPix].sort((a, b) => 
-        a.nome.localeCompare(b.nome)
-    );
-    
-    let html = '';
-    
-    jogadoresOrdenados.forEach(jogador => {
-        const tipoPixText = {
-            'CPF': 'CPF/CNPJ',
-            'EMAIL': 'E-mail',
-            'TELEFONE': 'Telefone',
-            'ALEATORIA': 'Chave Aleatória'
-        }[jogador.tipoPix] || 'Chave PIX';
+    try {
+        await navigator.clipboard.writeText(jogador.chavePix);
         
-        html += `
-            <div class="jogador-item">
-                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
-                     class="jogador-avatar"
-                     alt="${jogador.nome}"
-                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
-                <div class="jogador-info">
-                    <div class="jogador-nome">${jogador.nome}</div>
-                    <div class="jogador-status">${tipoPixText}</div>
-                </div>
-                <div class="pix-info">
-                    <div class="pix-key" title="Clique para copiar" onclick="copiarChavePIX('${jogador.id}')">
-                        ${jogador.chavePix}
-                    </div>
-                </div>
-                <div class="pix-actions">
-                    <button class="pix-action-btn copy" onclick="copiarChavePIX('${jogador.id}')" title="Copiar chave PIX">
-                        📋
-                    </button>
-                </div>
-            </div>
-        `;
-    });
-    
-    lista.innerHTML = html;
+        // Efeito visual
+        if (elemento.classList.contains('pix-key')) {
+            elemento.classList.add('copied');
+            setTimeout(() => {
+                elemento.classList.remove('copied');
+            }, 2000);
+        } else if (elemento.classList.contains('pix-copy-btn')) {
+            elemento.classList.add('copied');
+            elemento.textContent = '✓';
+            setTimeout(() => {
+                elemento.classList.remove('copied');
+                elemento.textContent = '📋';
+            }, 2000);
+        }
+        
+        mostrarFeedback(`✅ Chave PIX de ${jogador.nome} copiada!`);
+        
+    } catch (error) {
+        console.error('Erro ao copiar:', error);
+        // Fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = jogador.chavePix;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        mostrarFeedback(`✅ Chave PIX copiada! (método alternativo)`);
+    }
 }
 
 // Cadastrar novo jogador
@@ -1190,7 +1535,7 @@ async function cadastrarJogador() {
         return;
     }
     
-    // Validar formato da chave PIX baseado no tipo
+    // Validar formato da chave PIX
     if (!validarChavePIX(chavePix, tipoPix)) {
         mostrarFeedback('❌ Formato inválido para o tipo de chave selecionado');
         return;
@@ -1213,8 +1558,11 @@ async function cadastrarJogador() {
         // Limpar formulário
         limparFormulario();
         
-        // Recarregar lista
+        // Recarregar dados
         await carregarJogadores();
+        atualizarEstatisticas();
+        renderizarListaPIX();
+        renderizarListaCadastro();
         
     } catch (error) {
         console.error('Erro ao cadastrar jogador:', error);
@@ -1226,22 +1574,18 @@ async function cadastrarJogador() {
 function validarChavePIX(chave, tipo) {
     switch (tipo) {
         case 'CPF':
-            // Validar CPF (11 dígitos) ou CNPJ (14 dígitos)
             const numeros = chave.replace(/\D/g, '');
             return numeros.length === 11 || numeros.length === 14;
             
         case 'EMAIL':
-            // Validar email básico
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(chave);
             
         case 'TELEFONE':
-            // Validar telefone (10 ou 11 dígitos, com DDD)
             const telefone = chave.replace(/\D/g, '');
             return telefone.length === 10 || telefone.length === 11;
             
         case 'ALEATORIA':
-            // Chave aleatória (UUID) - mínimo de 32 caracteres
             return chave.length >= 32;
             
         default:
@@ -1256,42 +1600,6 @@ function limparFormulario() {
     document.getElementById('chavePix').value = '';
     document.getElementById('tipoPix').value = 'CPF';
     document.getElementById('nomeJogador').focus();
-}
-
-// Copiar chave PIX
-async function copiarChavePIX(jogadorId) {
-    const jogador = jogadores.find(j => j.id === jogadorId);
-    if (!jogador || !jogador.chavePix) {
-        mostrarFeedback('❌ Jogador não encontrado ou sem chave PIX');
-        return;
-    }
-    
-    try {
-        await navigator.clipboard.writeText(jogador.chavePix);
-        mostrarFeedback(`✅ Chave PIX de ${jogador.nome} copiada para a área de transferência!`);
-        
-        // Efeito visual no botão
-        const button = document.querySelector(`[onclick="copiarChavePIX('${jogadorId}')"]`);
-        if (button) {
-            const originalColor = button.style.color;
-            button.style.color = '#32CD32';
-            setTimeout(() => {
-                button.style.color = originalColor;
-            }, 1000);
-        }
-        
-    } catch (error) {
-        console.error('Erro ao copiar:', error);
-        // Fallback para navegadores antigos
-        const textArea = document.createElement('textarea');
-        textArea.value = jogador.chavePix;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        mostrarFeedback(`✅ Chave PIX copiada! (método alternativo)`);
-    }
 }
 
 // Solicitar exclusão
@@ -1323,11 +1631,13 @@ async function confirmarExclusao() {
         
         mostrarFeedback('✅ Jogador excluído com sucesso!');
         
-        // Fechar modal
         fecharModal();
         
-        // Recarregar lista
+        // Recarregar dados
         await carregarJogadores();
+        atualizarEstatisticas();
+        renderizarListaPIX();
+        renderizarListaCadastro();
         
     } catch (error) {
         console.error('Erro ao excluir jogador:', error);
@@ -1391,8 +1701,11 @@ async function salvarEdicao() {
         
         fecharEditModal();
         
-        // Recarregar lista
+        // Recarregar dados
         await carregarJogadores();
+        atualizarEstatisticas();
+        renderizarListaPIX();
+        renderizarListaCadastro();
         
     } catch (error) {
         console.error('Erro ao atualizar jogador:', error);
@@ -1411,23 +1724,47 @@ function fecharEditModal() {
     jogadorParaEditar = null;
 }
 
-// Sistema de visualização
-document.getElementById('btnViewCadastro').onclick = () => {
-    document.getElementById('btnViewCadastro').classList.add('active');
-    document.getElementById('btnViewPix').classList.remove('active');
-    document.getElementById('cadastroSection').style.display = 'block';
-    document.getElementById('pixSection').style.display = 'none';
+// Sistema de navegação
+document.getElementById('btnAcessarCadastro').onclick = () => {
+    document.getElementById('pixPage').style.display = 'none';
+    document.getElementById('cadastroPage').style.display = 'block';
+    renderizarListaCadastro();
 };
 
-document.getElementById('btnViewPix').onclick = () => {
-    document.getElementById('btnViewPix').classList.add('active');
-    document.getElementById('btnViewCadastro').classList.remove('active');
-    document.getElementById('cadastroSection').style.display = 'none';
-    document.getElementById('pixSection').style.display = 'block';
-    
-    // Garantir que a lista PIX está atualizada
-    renderizarListaPix();
+document.getElementById('btnVoltarPix').onclick = () => {
+    document.getElementById('cadastroPage').style.display = 'none';
+    document.getElementById('pixPage').style.display = 'block';
 };
+
+// Sistema de filtros e busca
+document.getElementById('filterTodos').onclick = () => {
+    filtroAtual = 'todos';
+    atualizarFiltros();
+    renderizarListaPIX();
+};
+
+document.getElementById('filterComPix').onclick = () => {
+    filtroAtual = 'comPix';
+    atualizarFiltros();
+    renderizarListaPIX();
+};
+
+document.getElementById('filterSemPix').onclick = () => {
+    filtroAtual = 'semPix';
+    atualizarFiltros();
+    renderizarListaPIX();
+};
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    buscaAtual = e.target.value;
+    renderizarListaPIX();
+});
+
+function atualizarFiltros() {
+    const filtros = ['filterTodos', 'filterComPix', 'filterSemPix'];
+    filtros.forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById(`filter${filtroAtual.charAt(0).toUpperCase() + filtroAtual.slice(1)}`).classList.add('active');
+}
 
 // Feedback visual
 function mostrarFeedback(mensagem) {
@@ -1438,7 +1775,7 @@ function mostrarFeedback(mensagem) {
         left: 50%;
         transform: translateX(-50%);
         background: var(--bg-card);
-        border: 1px solid var(--primary);
+        border: 1px solid var(--pix-color);
         color: var(--text);
         padding: 12px 20px;
         border-radius: 6px;
