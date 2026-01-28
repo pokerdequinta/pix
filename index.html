@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Anton', sans-serif; /* ALTERADO: Mudei para ANTON */
     background: var(--bg-dark);
     color: var(--text);
     min-height: 100vh;
@@ -64,7 +64,7 @@ body {
 .header h1 {
     font-family: 'Anton', sans-serif;
     font-size: 1.8rem;
-    color: var(--pix-color);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     margin-bottom: 4px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -74,6 +74,7 @@ body {
     font-size: 0.9rem;
     opacity: 0.8;
     font-weight: 300;
+    color: yellow; /* ALTERADO: Mudei para amarelo */
 }
 
 /* Container Principal */
@@ -123,7 +124,7 @@ body {
 
 .instructions-title {
     font-family: 'Anton', sans-serif;
-    color: var(--pix-color);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     font-weight: 400;
     margin-bottom: 15px;
     display: flex;
@@ -150,7 +151,7 @@ body {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: var(--pix-color);
+    background: yellow; /* ALTERADO: Mudei para amarelo */
     color: #000;
     border-radius: 50%;
     text-align: center;
@@ -189,17 +190,17 @@ body {
     width: 100%;
     padding: 12px 40px 12px 15px;
     background: var(--bg-row);
-    border: 1px solid var(--border);
+    border: 2px solid yellow; /* ALTERADO: Adicionei borda amarela */
     border-radius: 6px;
-    color: var(--text);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
 
 .search-box input:focus {
     outline: none;
-    border-color: var(--pix-color);
-    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
+    border-color: yellow;
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.3);
 }
 
 .search-icon {
@@ -207,7 +208,7 @@ body {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--pix-color);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     font-size: 1rem;
 }
 
@@ -223,7 +224,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
-    font-weight: 500;
+    font-family: 'Anton', sans-serif; /* ALTERADO: Adicionei ANTON */
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 0.9rem;
@@ -233,14 +234,14 @@ body {
 }
 
 .filter-btn:hover {
-    border-color: var(--pix-color);
-    background: rgba(212, 161, 33, 0.05);
+    border-color: yellow;
+    background: rgba(255, 255, 0, 0.05);
 }
 
 .filter-btn.active {
-    background: var(--pix-color);
+    background: yellow;
     color: #000;
-    border-color: var(--pix-color);
+    border-color: yellow;
     font-weight: 600;
 }
 
@@ -269,7 +270,7 @@ body {
     font-family: 'Anton', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--pix-color);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     margin-bottom: 4px;
     letter-spacing: 0.5px;
 }
@@ -278,6 +279,8 @@ body {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+
+/* REMOVIDO: Card de "Dias Atualizado" foi removido conforme solicitado */
 
 /* Lista de Jogadores para PIX */
 .pix-players-container {
@@ -293,12 +296,12 @@ body {
     grid-template-columns: 60px 1fr 2fr 100px;
     gap: 15px;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05));
-    border-bottom: 2px solid var(--pix-color);
+    background: linear-gradient(90deg, rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.05)); /* ALTERADO: Mudei para amarelo */
+    border-bottom: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
     font-family: 'Anton', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
-    color: var(--pix-color);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     letter-spacing: 0.5px;
 }
 
@@ -326,7 +329,7 @@ body {
 }
 
 .pix-player-card:hover {
-    background: rgba(212, 161, 33, 0.05);
+    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
 }
 
 .pix-player-avatar {
@@ -334,7 +337,7 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--pix-color);
+    border: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
     background: var(--bg-dark);
 }
 
@@ -349,12 +352,13 @@ body {
     font-size: 1rem;
     margin-bottom: 4px;
     letter-spacing: 0.5px;
+    color: yellow; /* ALTERADO: Mudei para amarelo */
 }
 
 .pix-player-type {
     font-size: 0.75rem;
     color: var(--text-muted);
-    background: rgba(212, 161, 33, 0.1);
+    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
     padding: 2px 6px;
     border-radius: 3px;
     display: inline-block;
@@ -371,11 +375,11 @@ body {
     flex: 1;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    color: var(--pix-color);
-    background: rgba(212, 161, 33, 0.1);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
+    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
     padding: 10px 12px;
     border-radius: 6px;
-    border: 1px solid rgba(212, 161, 33, 0.3);
+    border: 1px solid rgba(255, 255, 0, 0.3); /* ALTERADO: Mudei para amarelo */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -385,8 +389,8 @@ body {
 }
 
 .pix-key:hover {
-    background: rgba(212, 161, 33, 0.15);
-    border-color: var(--pix-color);
+    background: rgba(255, 255, 0, 0.15); /* ALTERADO: Mudei para amarelo */
+    border-color: yellow;
 }
 
 .pix-key.copied::after {
@@ -414,7 +418,7 @@ body {
     height: 50px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, var(--pix-color), var(--pix-dark));
+    background: linear-gradient(135deg, yellow, #b3b300); /* ALTERADO: Mudei para amarelo */
     color: #000;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -428,7 +432,7 @@ body {
 
 .pix-copy-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(212, 161, 33, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3); /* ALTERADO: Mudei para amarelo */
 }
 
 .pix-copy-btn.copied {
@@ -462,8 +466,8 @@ body {
 }
 
 .back-btn:hover {
-    border-color: var(--primary);
-    background: rgba(212, 161, 33, 0.05);
+    border-color: yellow;
+    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
 }
 
 .cadastro-form {
@@ -481,7 +485,7 @@ body {
 
 .form-group label {
     font-family: 'Anton', sans-serif;
-    color: var(--primary);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     font-weight: 400;
     font-size: 0.9rem;
     display: flex;
@@ -497,6 +501,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
+    font-family: 'Anton', sans-serif; /* ALTERADO: Adicionei ANTON */
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
@@ -504,17 +509,17 @@ body {
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
+    border-color: yellow;
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
 }
 
 .form-group.pix input {
-    border-color: var(--pix-color);
+    border-color: yellow;
 }
 
 .form-group.pix input:focus {
-    border-color: var(--pix-color);
-    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1);
+    border-color: yellow;
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
 }
 
 .form-actions {
@@ -572,12 +577,12 @@ body {
     grid-template-columns: 50px 1fr 1.5fr 120px;
     gap: 15px;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05));
-    border-bottom: 2px solid var(--primary);
+    background: linear-gradient(90deg, rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.05)); /* ALTERADO: Mudei para amarelo */
+    border-bottom: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
     font-family: 'Anton', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
-    color: var(--primary);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     letter-spacing: 0.5px;
 }
 
@@ -605,7 +610,7 @@ body {
 }
 
 .jogador-item:hover {
-    background: rgba(212, 161, 33, 0.03);
+    background: rgba(255, 255, 0, 0.03); /* ALTERADO: Mudei para amarelo */
 }
 
 .jogador-avatar {
@@ -613,7 +618,7 @@ body {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--primary);
+    border: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
     background: var(--bg-dark);
 }
 
@@ -627,6 +632,7 @@ body {
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
+    color: yellow; /* ALTERADO: Mudei para amarelo */
 }
 
 .jogador-status {
@@ -645,11 +651,11 @@ body {
     flex: 1;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
-    color: var(--pix-color);
-    background: rgba(212, 161, 33, 0.1);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
+    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
     padding: 8px 10px;
     border-radius: 4px;
-    border: 1px solid rgba(212, 161, 33, 0.2);
+    border: 1px solid rgba(255, 255, 0, 0.2); /* ALTERADO: Mudei para amarelo */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -658,7 +664,7 @@ body {
 .pix-type {
     font-size: 0.7rem;
     color: var(--text-muted);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
     padding: 3px 6px;
     border-radius: 3px;
     margin-top: 4px;
@@ -685,12 +691,12 @@ body {
 }
 
 .action-btn.edit {
-    color: var(--primary);
-    border: 1px solid var(--primary);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
+    border: 1px solid yellow; /* ALTERADO: Mudei para amarelo */
 }
 
 .action-btn.edit:hover {
-    background: rgba(212, 161, 33, 0.1);
+    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
 }
 
 .action-btn.delete {
@@ -740,7 +746,7 @@ body {
 
 .modal-content {
     background: var(--bg-card);
-    border: 1px solid var(--primary);
+    border: 1px solid yellow; /* ALTERADO: Mudei para amarelo */
     border-radius: 8px;
     padding: 20px;
     width: 90%;
@@ -749,7 +755,7 @@ body {
 
 .modal-title {
     font-family: 'Anton', sans-serif;
-    color: var(--primary);
+    color: yellow; /* ALTERADO: Mudei para amarelo */
     font-size: 1.2rem;
     margin-bottom: 10px;
     display: flex;
@@ -888,12 +894,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--pix-color);
+    background: yellow; /* ALTERADO: Mudei para amarelo */
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--pix-dark);
+    background: #b3b300; /* ALTERADO: Mudei para amarelo escuro */
 }
 
 /* Animações */
@@ -966,19 +972,19 @@ body {
             <div class="instructions-grid">
                 <div class="instruction-step">
                     <div class="step-number">1</div>
-                    <div class="step-text">Procure o jogador que irá receber o pagamento.</div>
+                    <div class="step-text">Selecione o jogador que irá receber o pagamento</div>
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">2</div>
-                    <div class="step-text">Clique no botão de cópia.</div>
+                    <div class="step-text">Clique no botão amarelo de cópia</div>
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">3</div>
-                    <div class="step-text">Abra o App do Pic Pay.</div>
+                    <div class="step-text">Abra o App do Pic Pay ou seu banco</div>
                 </div>
                 <div class="instruction-step">
                     <div class="step-number">4</div>
-                    <div class="step-text">Pronto, de uma Mamada no Gaspar!</div>
+                    <div class="step-text">Cole a chave PIX e confirme o pagamento</div>
                 </div>
             </div>
         </div>
@@ -1000,7 +1006,8 @@ body {
                 <div class="stat-value" id="semPix">0</div>
                 <div class="stat-label">Sem Chave PIX</div>
             </div>
-
+            <!-- REMOVIDO: Card de "Dias Atualizado" foi removido conforme solicitado -->
+        </div>
 
         <!-- Filtros e Busca -->
         <div class="filters-container">
@@ -1046,13 +1053,13 @@ body {
         </button>
 
         <div class="header">
-            <h1 style="color: var(--primary);">👤 CADASTRO DE JOGADORES</h1>
+            <h1>👤 CADASTRO DE JOGADORES</h1>
             <div class="subtitle">Gerencie os dados dos jogadores e suas chaves PIX</div>
         </div>
 
         <!-- Formulário de Cadastro -->
         <div style="background: var(--bg-card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border);">
-            <div style="font-family: 'Anton', sans-serif; font-size: 1.2rem; font-weight: 400; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;">
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.2rem; font-weight: 400; color: yellow; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;">
                 <span>📝</span>
                 <span>CADASTRAR NOVO JOGADOR</span>
             </div>
@@ -1317,22 +1324,12 @@ function atualizarEstatisticas() {
     const comPix = jogadores.filter(j => j.chavePix).length;
     const semPix = total - comPix;
     
-    // Encontrar data da última atualização
-    let ultimaAtualizacao = 0;
-    jogadores.forEach(jogador => {
-        if (jogador.dataAtualizacao) {
-            const data = new Date(jogador.dataAtualizacao);
-            const dias = Math.floor((Date.now() - data.getTime()) / (1000 * 60 * 60 * 24));
-            if (dias < ultimaAtualizacao || ultimaAtualizacao === 0) {
-                ultimaAtualizacao = dias;
-            }
-        }
-    });
+    // REMOVIDO: Cálculo de "Dias Atualizado" foi removido conforme solicitado
     
     document.getElementById('totalJogadores').textContent = total;
     document.getElementById('comPix').textContent = comPix;
     document.getElementById('semPix').textContent = semPix;
-    document.getElementById('ultimaAtualizacao').textContent = ultimaAtualizacao || '-';
+    // REMOVIDO: Linha para exibir "Dias Atualizado" foi removida
 }
 
 // Renderizar lista PIX
@@ -1391,10 +1388,10 @@ function renderizarListaPIX() {
         
         html += `
             <div class="pix-player-card">
-                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
+                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true`}" 
                      class="pix-player-avatar"
                      alt="${jogador.nome}"
-                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true'">
                 <div class="pix-player-info">
                     <div class="pix-player-name">${jogador.nome}</div>
                     <div class="pix-player-type">${temPix ? tipoPixText : 'Sem PIX'}</div>
@@ -1464,10 +1461,10 @@ function renderizarListaCadastro() {
         
         html += `
             <div class="jogador-item">
-                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
+                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true`}" 
                      class="jogador-avatar"
                      alt="${jogador.nome}"
-                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true'">
                 <div class="jogador-info">
                     <div class="jogador-nome">${jogador.nome}</div>
                     <div class="jogador-status">Cadastrado em: ${dataCriacao}</div>
@@ -1800,7 +1797,7 @@ function mostrarFeedback(mensagem) {
         left: 50%;
         transform: translateX(-50%);
         background: var(--bg-card);
-        border: 1px solid var(--pix-color);
+        border: 1px solid yellow;
         color: var(--text);
         padding: 12px 20px;
         border-radius: 6px;
@@ -1854,6 +1851,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
-
-
