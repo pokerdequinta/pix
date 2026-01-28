@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PDQ - Facilitador PIX</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
     --primary: #d4a121;
@@ -35,7 +35,7 @@
 }
 
 body {
-    font-family: 'Anton', sans-serif; /* ALTERADO: Mudei para ANTON */
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Mudei para Roboto */
     background: var(--bg-dark);
     color: var(--text);
     min-height: 100vh;
@@ -64,17 +64,18 @@ body {
 .header h1 {
     font-family: 'Anton', sans-serif;
     font-size: 1.8rem;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     margin-bottom: 4px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .header .subtitle {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.9rem;
     opacity: 0.8;
     font-weight: 300;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--text-muted); /* ALTERADO: Cor padrão */
 }
 
 /* Container Principal */
@@ -124,7 +125,7 @@ body {
 
 .instructions-title {
     font-family: 'Anton', sans-serif;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-weight: 400;
     margin-bottom: 15px;
     display: flex;
@@ -151,7 +152,7 @@ body {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: yellow; /* ALTERADO: Mudei para amarelo */
+    background: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     color: #000;
     border-radius: 50%;
     text-align: center;
@@ -163,6 +164,7 @@ body {
 }
 
 .step-text {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.9rem;
     color: var(--text);
     line-height: 1.4;
@@ -190,17 +192,18 @@ body {
     width: 100%;
     padding: 12px 40px 12px 15px;
     background: var(--bg-row);
-    border: 2px solid yellow; /* ALTERADO: Adicionei borda amarela */
+    border: 2px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     border-radius: 6px;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
 
 .search-box input:focus {
     outline: none;
-    border-color: yellow;
-    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.3);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.3);
 }
 
 .search-icon {
@@ -208,7 +211,7 @@ body {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-size: 1rem;
 }
 
@@ -224,7 +227,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
-    font-family: 'Anton', sans-serif; /* ALTERADO: Adicionei ANTON */
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 0.9rem;
@@ -234,14 +237,14 @@ body {
 }
 
 .filter-btn:hover {
-    border-color: yellow;
-    background: rgba(255, 255, 0, 0.05);
+    border-color: var(--primary);
+    background: rgba(212, 161, 33, 0.05);
 }
 
 .filter-btn.active {
-    background: yellow;
+    background: var(--primary);
     color: #000;
-    border-color: yellow;
+    border-color: var(--primary);
     font-weight: 600;
 }
 
@@ -270,12 +273,13 @@ body {
     font-family: 'Anton', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     margin-bottom: 4px;
     letter-spacing: 0.5px;
 }
 
 .stat-label {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.8rem;
     color: var(--text-muted);
 }
@@ -296,12 +300,12 @@ body {
     grid-template-columns: 60px 1fr 2fr 100px;
     gap: 15px;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.05)); /* ALTERADO: Mudei para amarelo */
-    border-bottom: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
+    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05)); /* ALTERADO: Cor do botão de cadastro */
+    border-bottom: 2px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-family: 'Anton', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     letter-spacing: 0.5px;
 }
 
@@ -329,7 +333,7 @@ body {
 }
 
 .pix-player-card:hover {
-    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
+    background: rgba(212, 161, 33, 0.05); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .pix-player-avatar {
@@ -337,7 +341,7 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
+    border: 2px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     background: var(--bg-dark);
 }
 
@@ -352,13 +356,14 @@ body {
     font-size: 1rem;
     margin-bottom: 4px;
     letter-spacing: 0.5px;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .pix-player-type {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.75rem;
     color: var(--text-muted);
-    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    background: rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
     padding: 2px 6px;
     border-radius: 3px;
     display: inline-block;
@@ -375,11 +380,11 @@ body {
     flex: 1;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
-    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
+    background: rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
     padding: 10px 12px;
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 0, 0.3); /* ALTERADO: Mudei para amarelo */
+    border: 1px solid rgba(212, 161, 33, 0.3); /* ALTERADO: Cor do botão de cadastro */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -389,8 +394,8 @@ body {
 }
 
 .pix-key:hover {
-    background: rgba(255, 255, 0, 0.15); /* ALTERADO: Mudei para amarelo */
-    border-color: yellow;
+    background: rgba(212, 161, 33, 0.15); /* ALTERADO: Cor do botão de cadastro */
+    border-color: var(--primary);
 }
 
 .pix-key.copied::after {
@@ -403,6 +408,7 @@ body {
     color: white;
     padding: 4px 8px;
     border-radius: 4px;
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.75rem;
     white-space: nowrap;
     animation: fadeOut 2s forwards;
@@ -418,7 +424,7 @@ body {
     height: 50px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, yellow, #b3b300); /* ALTERADO: Mudei para amarelo */
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* ALTERADO: Cor do botão de cadastro */
     color: #000;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -432,7 +438,7 @@ body {
 
 .pix-copy-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3); /* ALTERADO: Mudei para amarelo */
+    box-shadow: 0 4px 12px rgba(212, 161, 33, 0.3); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .pix-copy-btn.copied {
@@ -459,6 +465,7 @@ body {
     border-radius: 6px;
     color: var(--text);
     padding: 8px 16px;
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.9rem;
     cursor: pointer;
     margin-bottom: 20px;
@@ -466,8 +473,8 @@ body {
 }
 
 .back-btn:hover {
-    border-color: yellow;
-    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
+    border-color: var(--primary);
+    background: rgba(212, 161, 33, 0.05); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .cadastro-form {
@@ -485,7 +492,7 @@ body {
 
 .form-group label {
     font-family: 'Anton', sans-serif;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-weight: 400;
     font-size: 0.9rem;
     display: flex;
@@ -501,7 +508,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
-    font-family: 'Anton', sans-serif; /* ALTERADO: Adicionei ANTON */
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
@@ -509,17 +516,17 @@ body {
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: yellow;
-    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .form-group.pix input {
-    border-color: yellow;
+    border-color: var(--primary);
 }
 
 .form-group.pix input:focus {
-    border-color: yellow;
-    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .form-actions {
@@ -577,12 +584,12 @@ body {
     grid-template-columns: 50px 1fr 1.5fr 120px;
     gap: 15px;
     padding: 15px;
-    background: linear-gradient(90deg, rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.05)); /* ALTERADO: Mudei para amarelo */
-    border-bottom: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
+    background: linear-gradient(90deg, rgba(212, 161, 33, 0.1), rgba(212, 161, 33, 0.05)); /* ALTERADO: Cor do botão de cadastro */
+    border-bottom: 2px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-family: 'Anton', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     letter-spacing: 0.5px;
 }
 
@@ -610,7 +617,7 @@ body {
 }
 
 .jogador-item:hover {
-    background: rgba(255, 255, 0, 0.03); /* ALTERADO: Mudei para amarelo */
+    background: rgba(212, 161, 33, 0.03); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .jogador-avatar {
@@ -618,7 +625,7 @@ body {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid yellow; /* ALTERADO: Mudei para amarelo */
+    border: 2px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     background: var(--bg-dark);
 }
 
@@ -632,10 +639,11 @@ body {
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .jogador-status {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-top: 2px;
@@ -651,20 +659,21 @@ body {
     flex: 1;
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
-    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
+    background: rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
     padding: 8px 10px;
     border-radius: 4px;
-    border: 1px solid rgba(255, 255, 0, 0.2); /* ALTERADO: Mudei para amarelo */
+    border: 1px solid rgba(212, 161, 33, 0.2); /* ALTERADO: Cor do botão de cadastro */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .pix-type {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.7rem;
     color: var(--text-muted);
-    background: rgba(255, 255, 0, 0.05); /* ALTERADO: Mudei para amarelo */
+    background: rgba(212, 161, 33, 0.05); /* ALTERADO: Cor do botão de cadastro */
     padding: 3px 6px;
     border-radius: 3px;
     margin-top: 4px;
@@ -691,12 +700,12 @@ body {
 }
 
 .action-btn.edit {
-    color: yellow; /* ALTERADO: Mudei para amarelo */
-    border: 1px solid yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
+    border: 1px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .action-btn.edit:hover {
-    background: rgba(255, 255, 0, 0.1); /* ALTERADO: Mudei para amarelo */
+    background: rgba(212, 161, 33, 0.1); /* ALTERADO: Cor do botão de cadastro */
 }
 
 .action-btn.delete {
@@ -715,6 +724,7 @@ body {
     right: 10px;
     padding: 6px 12px;
     border-radius: 15px;
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     font-size: 0.75rem;
     font-weight: 600;
     z-index: 1000;
@@ -746,7 +756,7 @@ body {
 
 .modal-content {
     background: var(--bg-card);
-    border: 1px solid yellow; /* ALTERADO: Mudei para amarelo */
+    border: 1px solid var(--primary); /* ALTERADO: Cor do botão de cadastro */
     border-radius: 8px;
     padding: 20px;
     width: 90%;
@@ -755,7 +765,7 @@ body {
 
 .modal-title {
     font-family: 'Anton', sans-serif;
-    color: yellow; /* ALTERADO: Mudei para amarelo */
+    color: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     font-size: 1.2rem;
     margin-bottom: 10px;
     display: flex;
@@ -765,6 +775,7 @@ body {
 }
 
 .modal-text {
+    font-family: 'Roboto', sans-serif; /* ALTERADO: Roboto */
     color: var(--text-muted);
     margin-bottom: 20px;
     font-size: 0.9rem;
@@ -894,12 +905,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: yellow; /* ALTERADO: Mudei para amarelo */
+    background: var(--primary); /* ALTERADO: Cor do botão de cadastro */
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #b3b300; /* ALTERADO: Mudei para amarelo escuro */
+    background: var(--primary-dark); /* ALTERADO: Cor do botão de cadastro */
 }
 
 /* Animações */
@@ -1059,7 +1070,7 @@ body {
 
         <!-- Formulário de Cadastro -->
         <div style="background: var(--bg-card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border);">
-            <div style="font-family: 'Anton', sans-serif; font-size: 1.2rem; font-weight: 400; color: yellow; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;">
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.2rem; font-weight: 400; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;">
                 <span>📝</span>
                 <span>CADASTRAR NOVO JOGADOR</span>
             </div>
@@ -1363,7 +1374,7 @@ function renderizarListaPIX() {
             'Nenhum jogador cadastrado';
         
         lista.innerHTML = `
-            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+            <div style="text-align: center; padding: 40px; color: var(--text-muted); font-family: 'Roboto', sans-serif;">
                 <div style="font-size: 3rem; margin-bottom: 15px;">🔍</div>
                 <div style="font-size: 1.1rem; margin-bottom: 10px;">${mensagem}</div>
                 <div style="font-size: 0.9rem;">
@@ -1388,10 +1399,10 @@ function renderizarListaPIX() {
         
         html += `
             <div class="pix-player-card">
-                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true`}" 
+                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
                      class="pix-player-avatar"
                      alt="${jogador.nome}"
-                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true'">
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
                 <div class="pix-player-info">
                     <div class="pix-player-name">${jogador.nome}</div>
                     <div class="pix-player-type">${temPix ? tipoPixText : 'Sem PIX'}</div>
@@ -1402,7 +1413,7 @@ function renderizarListaPIX() {
                             ${jogador.chavePix}
                         </div>
                     ` : `
-                        <div style="flex: 1; color: var(--text-muted); font-style: italic; padding: 10px 12px;">
+                        <div style="flex: 1; color: var(--text-muted); font-style: italic; padding: 10px 12px; font-family: 'Roboto', sans-serif;">
                             Sem chave PIX cadastrada
                         </div>
                     `}
@@ -1431,7 +1442,7 @@ function renderizarListaCadastro() {
     
     if (jogadores.length === 0) {
         lista.innerHTML = `
-            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+            <div style="text-align: center; padding: 40px; color: var(--text-muted); font-family: 'Roboto', sans-serif;">
                 <div style="font-size: 3rem; margin-bottom: 15px;">👤</div>
                 <div style="font-size: 1.1rem; margin-bottom: 10px;">Nenhum jogador cadastrado</div>
                 <div style="font-size: 0.9rem;">Comece cadastrando um jogador usando o formulário acima</div>
@@ -1461,10 +1472,10 @@ function renderizarListaCadastro() {
         
         html += `
             <div class="jogador-item">
-                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true`}" 
+                <img src="${jogador.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true`}" 
                      class="jogador-avatar"
                      alt="${jogador.nome}"
-                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=yellow&bold=true'">
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(jogador.nome)}&background=0a150a&color=d4a121&bold=true'">
                 <div class="jogador-info">
                     <div class="jogador-nome">${jogador.nome}</div>
                     <div class="jogador-status">Cadastrado em: ${dataCriacao}</div>
@@ -1476,7 +1487,7 @@ function renderizarListaCadastro() {
                         </div>
                         <div class="pix-type">${tipoPixText}</div>
                     ` : `
-                        <div style="color: var(--text-muted); font-style: italic; font-size: 0.9rem;">
+                        <div style="color: var(--text-muted); font-style: italic; font-size: 0.9rem; font-family: 'Roboto', sans-serif;">
                             Sem chave PIX
                         </div>
                     `}
@@ -1797,13 +1808,14 @@ function mostrarFeedback(mensagem) {
         left: 50%;
         transform: translateX(-50%);
         background: var(--bg-card);
-        border: 1px solid yellow;
+        border: 1px solid var(--primary);
         color: var(--text);
         padding: 12px 20px;
         border-radius: 6px;
         z-index: 3000;
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         animation: slideIn 0.3s ease;
+        font-family: 'Roboto', sans-serif;
     `;
     feedback.textContent = mensagem;
     
